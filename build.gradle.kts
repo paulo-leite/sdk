@@ -14,6 +14,13 @@ java {
 
 repositories {
 	mavenCentral()
+	maven {
+		url = uri("https://github.com/paulo-leite/sdk")
+		credentials {
+			username = findProperty("repoUser") as String? ?: "defaultUser"
+			password = findProperty("repoPassword") as String? ?: "defaultPassword"
+		}
+	}
 }
 
 dependencyManagement {
